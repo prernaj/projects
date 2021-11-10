@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import lombok.NonNull;
+
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class Case1Test extends BaseTest {
         final String screen = setupScreen();
         final List<String> screen1SeatIds = createSeats(theatreController, screen, 2, 10);
 
-        final String show = showController.createShow(movie, screen, new Date(), 2 * 60 * 60);
+        final String show = showController.createShow(movie, screen, (java.sql.@NonNull Date) new Date(), 2 * 60 * 60);
 
         List<String> u1AvailableSeats = showController.getAvailableSeats(show);
 
