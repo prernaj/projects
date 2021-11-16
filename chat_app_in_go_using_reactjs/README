@@ -1,0 +1,9 @@
+https://docs.google.com/presentation/d/1WFRIDNmAKA7BPRx9fHTD9hCs8tCODZ3s3NjCTCrUCiw/edit
+
+run server
+> cd backend/
+> go run main.go
+
+run clients
+> cd frontend/
+> npm start 
