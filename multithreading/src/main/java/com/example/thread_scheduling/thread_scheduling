@@ -1,0 +1,7 @@
+Scheduling of threads involves two boundary scheduling,
+
+Scheduling of user level threads (ULT) to kernel level threads (KLT) via leightweight process (LWP) by the application developer.
+Scheduling of kernel level threads by the system scheduler to perform different unique os functions.
+
+Currently out of scope: read more here later https://www.geeksforgeeks.org/thread-scheduling/
+

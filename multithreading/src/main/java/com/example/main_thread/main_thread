@@ -1,0 +1,18 @@
+Java provides built-in support for multithreaded programming.
+A multi-threaded program contains two or more parts that can run concurrently.
+Each part of such a program is called a thread, and each thread defines a separate path of execution.
+
+When a Java program starts up, one thread begins running immediately.
+This is usually called the main thread of our program because it is the one that is executed when our program begins. 
+
+There are certain properties associated with the main thread which are as follows:
+- It is the thread from which other “child” threads will be spawned.
+- Often, it must be the last thread to finish execution because it performs various shutdown actions
+
+JVM starts Main Thread for each program.
+JVM starts other Daemon threads (e.g. Garbage Collector)
+MainThread of a program can spawn child threads.
+
+For each program, a Main thread is created by JVM(Java Virtual Machine). 
+The “Main” thread first verifies the existence of the main() method, and then it initializes the class. 
+Note that from JDK 6, main() method is mandatory in a standalone java application.

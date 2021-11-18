@@ -1,0 +1,5 @@
+Using Atomic Variable
+
+Using an atomic variable is another way to achieve thread-safety in java. 
+When variables are shared by multiple threads, the atomic variable ensures that threads don’t crash into each other.
+

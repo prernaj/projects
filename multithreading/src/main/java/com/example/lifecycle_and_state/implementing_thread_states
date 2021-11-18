@@ -1,0 +1,36 @@
+Implementing Thread States in Java
+In Java, to get the current state of the thread, use Thread.getState() method to get the current state of the thread.
+Java provides java.lang.Thread.State class that defines the ENUM constants for the state of a thread, as summary of which is given below:
+
+Constant type: New
+Thread state for a thread which has not yet started.
+
+Constant type: Runnable
+Thread state for a runnable thread. 
+A thread in the runnable state is executing in the Java virtual machine but it may be waiting for other resources from the operating system such as processor.
+
+Constant type: Blocked
+Thread state for a thread blocked waiting for a monitor lock. 
+A thread in the blocked state is waiting for a monitor lock to enter a synchronized block/method or reenter a synchronized block/method after calling Object.wait().
+
+Constant type: Waiting
+Thread state for a waiting thread. 
+A thread is in the waiting state due to calling one of the following methods:
+Object.wait with no timeout
+Thread.join with no timeout
+LockSupport.park
+
+A thread in the waiting state is waiting for another thread to perform a particular action.
+
+Constant type: Timed Waiting
+Thread state for a waiting thread with a specified waiting time. 
+A thread is in the timed waiting state due to calling one of the following methods with a specified positive waiting time:
+Thread.sleep
+Object.wait with timeout
+Thread.join with timeout
+LockSupport.parkNanos
+LockSupport.parkUntil
+
+Constant type: Terminated
+Thread state for a terminated thread. 
+The thread has completed execution.

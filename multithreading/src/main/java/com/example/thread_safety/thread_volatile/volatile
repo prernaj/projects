@@ -1,0 +1,3 @@
+A volatile keyword is a field modifier that ensures that the object can be used by multiple threads at the same time without having any problem. 
+volatile is one good way of ensuring that the Java program is thread-safe.
+a volatile keyword can be used as an alternative way of achieving Thread Safety in Java.

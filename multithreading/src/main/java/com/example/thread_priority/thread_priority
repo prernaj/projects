@@ -1,0 +1,25 @@
+Java Thread Priority in Multithreading
+
+Java works within a multithreading environment in which a thread scheduler assigns the processor to a thread based on the priority of thread.
+Whenever we create a thread in Java, it always has some priority assigned to it.
+Priority can either be given by JVM while creating the thread or it can be given by the programmer explicitly. 
+
+Priorities in threads is a concept where each thread is having a priority which in layman’s language one can say every object is having priority here which is represented by numbers ranging from 1 to 10. 
+The default priority is set to 5 as excepted.
+Minimum priority is set to 1.
+Maximum priority is set to 10.
+
+Here 3 constants are defined in it namely as follows:
+
+public static int NORM_PRIORITY
+public static int MIN_PRIORITY
+public static int MAX_PRIORITY
+
+how to get and set priority of a thread in java. 
+
+public final int getPriority(): java.lang.Thread.getPriority() 
+method returns priority of given thread.
+
+public final void setPriority(int newPriority): java.lang.Thread.setPriority() 
+method changes the priority of thread to the value newPriority. 
+This method throws IllegalArgumentException if value of parameter newPriority goes beyond minimum(1) and maximum(10) limit.

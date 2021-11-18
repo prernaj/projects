@@ -1,0 +1,8 @@
+Tuning Thread Pool
+
+The optimum size of the thread pool depends on the number of processors available and the nature of the tasks. 
+On a N processor system for a queue of only computation type processes, 
+a maximum thread pool size of N or N+1 will achieve the maximum efficiency.
+
+But tasks may wait for I/O and in such a case we take into account the ratio of waiting time(W) and service time(S) for a request; 
+resulting in a maximum pool size of N*(1+ W/S) for maximum efficiency.
