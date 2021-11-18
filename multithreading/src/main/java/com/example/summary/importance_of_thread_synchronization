@@ -1,0 +1,69 @@
+Our systems are working in a multithreading environment that becomes an important part for OS to provide better utilization of resources.
+The process of running two or more parts of the program simultaneously is known as Multithreading.
+A program is a set of instructions in which multiple processes are running and within a process, multiple threads are working.
+Threads are nothing but lightweight processes.
+For example, in the computer we are playing video games at the same time we are working with MS word and listen to music.
+So, these are the processes we are working on concurrently. 
+In this, every application has multiple sub-processes i.e. threads.
+In the previous example, we listen to music in which we are having a music player as an application that contains multiple sub-processes which are running like managing playlist, accessing the internet, etc. So, threads are the task to be performed and multithreading is multiple tasks/processes getting executed at the same time in the same program.  
+This is the basic introduction of multithreading which will further help to understand the importance of thread synchronization.
+
+Thread Priorities
+In java, every thread is assigned with a priority that determines how the threads should be treated with respect to each other. Thread’s priority is used to decide when to switch from one running thread to the next. A higher priority thread can preempt a lower priority thread and may take more CPU time. In a simple way, a thread with higher priority gets the resource first as compared to the thread with lower priority. But, in case, when two threads with the same priority want the same resource then the situation becomes more complicated. So, in a multithreading environment, if threads with the same priority are working with the same resource give unwanted results or erroneous code.
+
+Let’s take an example. In a room, we have multiple computers that are attached to a single printer. At one time, one computer wants to print a document, so it uses a printer. At the same time, another computer wants the printer to print its document. So, two computers are demanding the same resource i.e. printer. So if both the processes running together then the printer will print the document of one as well as of another computer. This will produce invalid output. Now, the same thing happens in the case of threads if two threads with the same priority or want the same resource leads to inconsistent output.
+
+In java, when two or more threads try to access the same resource simultaneously it causes the java runtime to execute one or more threads slowly, or even suspend their execution. In order to overcome this problem, we have thread synchronization. 
+
+Synchronization means coordination between multiple processes/threads.  
+
+Types of synchronization:
+
+There are two types of synchronization that are as follows:
+
+Process synchronization
+Thread synchronization
+
+Thread synchronization basically refers to The concept of one thread execute at a time and the rest of the threads are in waiting state. This process is known as thread synchronization. It prevents the thread interference and inconsistency problem.
+
+Synchronization is build using locks or monitor. In Java, a monitor is an object that is used as a mutually exclusive lock. Only a single thread at a time has the right to own a monitor. When a thread gets a lock then all other threads will get suspended which are trying to acquire the locked monitor. So, other threads are said to be waiting for the monitor, until the first thread exits the monitor. In a simple way, when a thread request a resource then that resource gets locked so that no other thread can work or do any modification until the resource gets released.
+
+Thread Synchronization are of two types:
+
+Mutual Exclusive
+Inter-Thread Communication
+
+A. Mutual Exclusive
+
+While sharing any resource, this will keep the thread interfering with one another i.e. mutual exclusive. We can achieve this via
+
+Synchronized Method
+Synchronized Block
+Static Synchronization
+
+Synchronized Method
+
+We can declare a method as synchronized using the “synchronized” keyword. This will make the code written inside the method thread-safe so that no other thread will execute while the resource is shared.
+
+Implementation:
+
+We will be proposing prints the two threads simultaneously showing the asynchronous behavior without thread synchronization. 
+
+Now using synchronized method, it will  lock the object for the shared resource and gives the consistent output. 
+
+B. Synchronized Block
+
+If we declare a block as synchronized, only the code which is written inside that block is executed sequentially not the complete code. This is used when we want sequential access to some part of code or to synchronize some part of code.
+
+Syntax:
+
+synchronized (object reference) 
+{    
+   // Insert code here
+}
+
+C. Static Synchronization
+
+In this, the synchronized method is declared as “static” which means the lock or monitor is applied on the class not on the object so that only one thread will access the class at a time.
+
+

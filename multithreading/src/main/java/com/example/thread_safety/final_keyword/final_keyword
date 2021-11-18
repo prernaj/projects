@@ -1,0 +1,1 @@
+Final Variables are also thread-safe in java because once assigned some reference of an object It cannot point to reference of another object. 

@@ -1,0 +1,19 @@
+ConcurrentMap Interface in java
+
+ConcurrentMap is an interface and it is a member of the Java Collections Framework, 
+which is introduced in JDK 1.5 represents a Map that is capable of handling concurrent access to it without affecting the consistency of entries in a map. 
+ConcurrentMap interface present in java.util.concurrent package. 
+It provides some extra methods apart from what it inherits from the SuperInterface i.e. java.util.Map.
+It has inherited the Nested Interface Map.Entry<K, V>. 
+
+HashMap operations are not synchronized, while Hashtable provides synchronization.
+Though Hashtable is a thread-safe, it is not very efficient.
+To solve this issue, the Java Collections Framework introduced ConcurrentMap in Java 1.5.
+
+the Hirarchy
+
+Interface ConcurrentMap extends Interface Map
+Interface ConcurrentNaigiableMap extends ConcurrentMap
+
+
+To be continued... https://www.geeksforgeeks.org/concurrentmap-interface-java/

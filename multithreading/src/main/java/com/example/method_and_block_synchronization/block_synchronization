@@ -1,0 +1,34 @@
+If we only need to execute some subsequent lines of code not all lines (instructions) of code within a method, 
+then we should synchronize only block of the code within which required instructions are exists.
+
+For example, lets suppose there is a method that contains 100 lines of code 
+but there are only 10 lines (one after one) of code which contain critical section of code i.e. these lines can modify (change) the Object’s state.
+So we only need to synchronize these 10 lines of code method to avoid any modification in state of the Object 
+and to ensure that other threads can execute rest of the lines within the same method without any interruption.
+
+Important points:
+
+When a thread enters into synchronized method or block, it acquires lock and once it completes its task and exits from the synchronized method, it releases the lock.
+
+When thread enters into synchronized instance method or block, 
+it acquires Object level lock and when it enters into synchronized static method or block it acquires class level lock.
+
+Java synchronization will throw null pointer exception if Object used in synchronized block is null. 
+For example, If in synchronized(instance) , instance is null then it will throw null pointer exception.
+
+In Java, wait(), notify() and notifyAll() are the important methods that are used in synchronization.
+
+You can not apply java synchronized keyword with the variables.
+
+Don’t synchronize on the non-final field on synchronized block because the reference 
+to the non-final field may change anytime and then different threads might synchronize on different objects i.e. no synchronization at all.
+
+Advantages
+
+Multithreading: Since java is multithreaded language, synchronization is a good way to achieve mutual exclusion on shared resource(s).
+Instance and Static Methods: Both synchronized instance methods and synchronized static methods can be executed concurrently because they are used to lock different Objects.
+
+Limitations
+
+Concurrency Limitations: Java synchronization does not allow concurrent reads.
+Decreases Efficiency: Java synchronized method run very slowly and can degrade the performance, so you should synchronize the method when it is absolutely necessary otherwise not and to synchronize block only for critical section of the code.

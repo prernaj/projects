@@ -1,0 +1,22 @@
+Important Points
+
+Don’t queue tasks that concurrently wait for results from other tasks. 
+This can lead to a situation of deadlock as described above.
+
+Be careful while using threads for a long lived operation. 
+It might result in the thread waiting forever and would eventually lead to resource leakage.
+
+The Thread Pool has to be ended explicitly at the end. 
+If this is not done, then the program goes on executing and never ends. 
+Call shutdown() on the pool to end the executor. 
+If you try to send another task to the executor after shutdown, it will throw a RejectedExecutionException.
+
+One needs to understand the tasks to effectively tune the thread pool. 
+If the tasks are very contrasting then it makes sense to use different thread pools for different types of tasks so as to tune them properly.
+You can restrict maximum number of threads that can run in JVM, reducing chances of JVM running out of memory.
+
+If you need to implement your loop to create new threads for processing, 
+using ThreadPool will help to process faster, 
+as ThreadPool does not create new Threads after it reached it’s max limit.
+
+After completion of Thread Processing, ThreadPool can use the same Thread to do another process(so saving the time and resources to create another Thread.)

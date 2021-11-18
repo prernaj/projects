@@ -1,0 +1,16 @@
+Thread Safety and how to achieve it in Java
+
+As we know Java has a feature, Multithreading, which is a process of running multiple threads simultaneously.
+When multiple threads are working on the same data, and the value of our data is changing, that scenario is not thread-safe and we will get inconsistent results.
+When a thread is already working on an object and preventing another thread on working on the same object, this process is called Thread-Safety. 
+
+How to achieve Thread Safety
+There are four ways to achieve Thread Safety in Java. These are:
+Using Synchronization.
+Using Volatile Keyword.
+Using Atomic Variable.
+Using Final Keyword.
+
+
+
+

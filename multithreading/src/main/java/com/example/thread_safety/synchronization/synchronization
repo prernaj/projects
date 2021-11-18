@@ -1,0 +1,8 @@
+Using Synchronization
+Synchronization is the process of allowing only one thread at a time to complete the particular task. 
+It means when multiple threads executing simultaneously, and want to access the same resource at the same time, 
+then the problem of inconsistency will occur. so synchronization is used to resolve inconsistency problem by allowing only one thread at a time. 
+
+Synchronization uses a synchronized keyword. 
+Synchronized is the modifier that creates a block of code known as a critical section. 
+

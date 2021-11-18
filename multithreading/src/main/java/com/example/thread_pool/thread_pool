@@ -1,0 +1,33 @@
+A thread pool reuses previously created threads to execute current tasks 
+and offers a solution to the problem of thread cycle overhead and resource thrashing.
+Since the thread is already existing when the request arrives, 
+the delay introduced by thread creation is eliminated, making the application more responsive.
+
+Java provides the Executor framework which is centered around the Executor interface, 
+its sub-interface –ExecutorService and the class-ThreadPoolExecutor, which implements both of these interfaces.
+By using the executor, one only has to implement the Runnable objects and send them to the executor to execute.
+
+They allow you to take advantage of threading, but focus on the tasks that you want the thread to perform, instead of thread mechanics.
+
+To use thread pools, we first create a object of ExecutorService and pass a set of tasks to it. 
+ThreadPoolExecutor class allows to set the core and maximum pool size.
+The runnables that are run by a particular thread are executed sequentially.
+
+Executor Thread Pool Methods
+newFixedThreadPool(int)
+Creates a fixed size thread pool.
+
+newCachedThreadPool()
+Creates a thread pool that creates new threads as needed, but will reuse previously constructed threads when they are available
+
+newSingleThreadExecutor()
+Creates a single thread.
+
+In case of a fixed thread pool, 
+if all threads are being currently run by the executor then the pending tasks are placed in a queue and are executed when a thread becomes idle.
+
+One of the main advantages of using this approach is when you want to process 100 requests at a time, but do not want to create 100 Threads for the same, so as to reduce JVM overload. You can use this approach to create a ThreadPool of 10 Threads and you can submit 100 requests to this ThreadPool. 
+ThreadPool will create maximum of 10 threads to process 10 requests at a time.  After process completion of any single Thread, 
+ThreadPool will internally allocate the 11th request to this Thread 
+and will keep on doing the same to all the remaining requests.
+

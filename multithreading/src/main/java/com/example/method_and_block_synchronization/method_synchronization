@@ -1,0 +1,11 @@
+Synchronized methods enables a simple strategy for preventing the thread interference and memory consistency errors.
+If a Object is visible to more than one threads, all reads or writes to that Object’s fields are done through the synchronized method.
+
+It is not possible for two invocations for synchronized methods to interleave. 
+If one thread is executing the synchronized method,
+all others thread that invoke synchronized method on the same Object will have to wait until first thread is done with the Object.
+
+There can be two trains (more than two) which need to use same at same time so there is chance of collision. 
+Therefore to avoid collision we need to synchronize the line in which multiple want to run.
+Line2
+Synchronized access to getLine() method on the same Object

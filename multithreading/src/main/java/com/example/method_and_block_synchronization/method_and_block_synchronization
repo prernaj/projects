@@ -1,0 +1,3 @@
+Threads communicate primarily by sharing access to fields and the objects reference fields refer to.
+This form of communication is extremely efficient, but makes two kinds of errors possible: thread interference and memory consistency errors.
+Some synchronization constructs are needed to prevent these errors. 
